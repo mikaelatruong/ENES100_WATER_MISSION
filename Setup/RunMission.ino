@@ -43,8 +43,7 @@ void runMission() {
   delay(relayTimeOn);
   analogWrite(relayPin, 0);
   bool isSalty = getSalinity();
-  bool isPolluted = false; //TODO add fucntion
-  //TODO determine Pollution
+  bool isPolluted = hasPollution(); 
   if (isSalty && isPolluted)
     Enes100.mission(WATER_TYPE, SALT_UNPOLLUTED);
   else if (!isSalty && isPolluted)
